@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('backend.pages.master');
+});
+
+Route::get('category-list',[CategoryController::class, 'index'])->name('category.index');
+Route::get('category-create',[CategoryController::class, 'create'])->name('category.create');
+Route::post('category-store',[CategoryController::class, 'store'])->name('category.store');
