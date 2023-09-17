@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::get('/admin', function () {
     return view('backend.pages.master');
 });
+    /* home controller */
+    Route::get('/',[HomeController::class, 'hero'])->name('home.hero');
+    Route::get('/',[HomeController::class, 'category'])->name('home.category');
+    Route::get('/',[HomeController::class, 'allProducts'])->name('home.allProducts');
+    
     /* categroy controller */
     Route::get('category-list',[CategoryController::class, 'index'])->name('category.index');
     Route::get('category-create',[CategoryController::class, 'create'])->name('category.create');
