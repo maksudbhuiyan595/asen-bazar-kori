@@ -12,8 +12,8 @@
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">Category Name</th>
-                        <th scope="col">Descriptions</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Descriptions</th>
                         <th scope="col">Image</th>
                         <th scope="col">Action</th>
                         </tr>
@@ -23,16 +23,16 @@
                         <tr>
                         <th scope="row">{{$key+1}}</th>
                         <td>{{$value->name}}</td>
-                        <td>{{$value->description}}</td>
                         <td>{{$value->status}}</td>
+                        <td>{{$value->description}}</td>
                         <td>
-                            <img style="height: 60px; weight: 60px;"
-                             src="{{url('uploads/categories/',$value->image)}}" alt="image">
+                            <img  style="height: 60px; weight: 60px; ;"
+                             src="{{url('/uploads/categories/',$value->image)}}" alt="image">
                         </td>
                        <td>
-                            <a class="btn btn-info" href="">View</a>
-                            <a class="btn btn-warning" href="">Edit</a>
-                            <a class="btn btn-danger" href="">Delete</a>
+                            <a class="btn btn-info text-white" href="{{route('category.view',$value->id)}}">View</a>
+                            <a class="btn btn-warning text-white" href="{{route('category.edit',$value->id)}}">Edit</a>
+                            <a class="btn btn-danger text-white" href="{{route('category.destroy',$value->id)}}">Delete</a>
                        </td>
                         </tr>
                        @endforeach
