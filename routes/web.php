@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('backend.pages.master');
 });
     /* categroy controller */
@@ -36,5 +36,6 @@ Route::get('/', function () {
     Route::post('product-store',[ProductController::class, 'store'])->name('product.store');
     Route::get('product-view/{id}',[ProductController::class, 'view'])->name('product.view');
     Route::get('product-edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
-    // Route::get('product-view/{id}',[ProductController::class, 'view'])->name('product.view');
+    Route::post('product-update/{id}',[ProductController::class, 'update'])->name('product.update');
+    Route::get('product-delete/{id}',[ProductController::class, 'destroy'])->name('product.destroy');
     

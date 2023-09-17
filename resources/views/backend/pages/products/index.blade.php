@@ -43,7 +43,7 @@
                        <td>
                             <a class="btn btn-info text-white" href="{{route('product.view',$product->id)}}">View</a>
                             <a class="btn btn-warning text-white" href="{{route('product.edit',$product->id)}}">Edit</a>
-                            <a class="btn btn-danger text-white" href="">Delete</a>
+                            <a class="btn btn-danger text-white" href="{{route('product.destroy',$product->id)}}">Delete</a>
                        </td>
                         </tr>
                        @endforeach

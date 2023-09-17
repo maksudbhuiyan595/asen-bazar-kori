@@ -28,7 +28,7 @@ class ProductController extends Controller
             'discount'=>'required',
             'discount_type'=>'required',
             'image'=>'required|image|mimes:jpeg,png,svg,jpg,gif,webp|max:1024',
-            'description'=>'required|max:255|min:10',
+            'description'=>'required|max:255',
         ]);
          if($request->hasFile('image')){
             $image=$request->file('image');
@@ -57,7 +57,39 @@ class ProductController extends Controller
     }
     public function edit($id){
         // return $id;
+        $categories=Category::all();
         $products=Product::find($id);
-        return view('backend.pages.products.edit',compact('products'));
+        // dd($products);
+        return view('backend.pages.products.edit',compact('products','categories'));
+    }
+    public function update(Request $request, $id){
+        $request->validate([
+            'category_id'=>'required',
+            'name'=>'required',
+            'status'=>'required',
+            'price'=>'required',
+            'quantity'=>'required',
+            'discount'=>'required',
+            'discount_type'=>'required',
+            'description'=>'required|max:255',
+        ]);
+       $product= Product::find($id);
+        $product->update([
+            'category_id'=>$request->category_id,
+            'name'=>$request->name,
+            'status'=>$request->status,
+            'price'=>$request->price,
+            'quantity'=>$request->quantity,
+            'discount'=>$request->discount,
+            'discount_type'=>$request->discount_type,
+            'description'=>$request->description,
+        ]);
+        Toastr::success('successfully updated.', 'Product', ['options']);
+            return redirect()->back();
+    }
+    public function destroy($id){
+        Product::destroy($id);
+        Toastr::error('successfully deleted.', 'Product', ['options']);
+        return redirect()->back();
     }
 }
