@@ -25,8 +25,8 @@ Route::get('/admin', function () {
 });
     /* home controller */
     Route::get('/',[HomeController::class, 'hero'])->name('home.hero');
-    Route::get('/',[HomeController::class, 'category'])->name('home.category');
-    Route::get('/',[HomeController::class, 'allProducts'])->name('home.allProducts');
+    Route::get('category-wise-product',[HomeController::class, 'categoryWiseproduct'])->name('home.categoryWiseProduct');
+    // Route::get('/',[HomeController::class, 'allProducts'])->name('home.allProducts');
     
     /* categroy controller */
     Route::get('category-list',[CategoryController::class, 'index'])->name('category.index');

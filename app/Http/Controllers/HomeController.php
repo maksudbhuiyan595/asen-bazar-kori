@@ -12,12 +12,11 @@ class HomeController extends Controller
         $categories=Category::all();
         return view('frontend.pages.hero',compact('categories'));
     }
-    public function category(){
+    public function categoryWiseProduct(){
         $categories=Category::all();
-        return view('frontend.pages.categories',compact('categories'));
-    }
-    public function allProducts(){
         $allProducts=Product::all();
-        return view('frontend.pages.allproducts',compact('allProducts'));
+        // dd($products);
+        return view('frontend.pages.categoryWiseProduct',compact('allProducts','categories'));
     }
+    
 }

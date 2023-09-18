@@ -172,22 +172,23 @@
     <!-- Hero Section End -->
 
     <!-- Categories Section Begin -->
-    <section class="categories">
+    <section class="categoryWiseProduct">
         <div class="container">
-            <h2 class="text-center"><strong>All Categories</strong></h2>
+            <h2 class="text-center"><strong>Category Wise Products </strong></h2>
                 <hr class="mb-5">
             <div class="row">
-            
-            @foreach($categories as $category)
+            @foreach($allProducts as $product)
                 <div class="col-md-3">
-                <a href="{{route('home.categoryWiseProduct')}}">
+                <a href="">
                     <div class="card mb-5">
                         <div class="card-header">
                              <div class="card-body">
                            
                                 <img style="height:300;weight:220px;" src="{{url('/uploads/categories/',$category->image)}}" alt="image">
-                                    <h6 class="mt-3"><span>Name:</span>{{$category->name}}</h6>
-                                        <p>Descriptions:{{$category->description}}</p>
+                                    <h6 class="mt-3"><span>Name:</span>{{$product->name}}</h6>
+                                        <p>Descriptions:{{$product->description}}</p>
+                                        <p>Descriptions:{{$product->description}}</p>
+                                        <p>Descriptions:{{$product->category->name}}</p>
                        
                                </div>
                         </div>
@@ -200,7 +201,7 @@
     </section>
     <!-- Categories Section End -->
     
-    @yield('allProducts')
+  
 
     <footer class="footer spad">
         <div class="container">
