@@ -5,28 +5,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
 
 Route::get('/admin', function () {
     return view('backend.pages.master');
 });
-    /* home controller */
-    Route::get('/',[HomeController::class, 'hero'])->name('home.hero');
-    Route::get('category-wise-product',[HomeController::class, 'categoryWiseproduct'])->name('home.categoryWiseProduct');
-    // Route::get('/',[HomeController::class, 'allProducts'])->name('home.allProducts');
+   
+    Route::get('/',[HomeController::class, 'homepage'])->name('homepage');
+    Route::get('/category/products/{id}',[HomeController::class, 'categoryProducts'])->name('category.products');
+   
     
     /* categroy controller */
     Route::get('category-list',[CategoryController::class, 'index'])->name('category.index');

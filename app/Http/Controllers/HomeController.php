@@ -8,15 +8,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function hero(){
+    public function homepage(){
         $categories=Category::all();
-        return view('frontend.pages.hero',compact('categories'));
+        return view('frontend.layouts.pages.homepage',compact('categories'));
     }
-    public function categoryWiseProduct(){
+    public function categoryProducts($id){
         $categories=Category::all();
-        $allProducts=Product::all();
-        // dd($products);
-        return view('frontend.pages.categoryWiseProduct',compact('allProducts','categories'));
+        $categoryProdusts=Product::latest()->take(2)->get();
+        return view('frontend.layouts.pages.categoryProducts',compact('categoryProducts','categories'));
     }
-    
 }
