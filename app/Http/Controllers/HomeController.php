@@ -10,11 +10,13 @@ class HomeController extends Controller
 {
     public function homepage(){
         $categories=Category::all();
-        return view('frontend.layouts.pages.homepage',compact('categories'));
+        $allProducts=Product::all();
+        return view('frontend.layouts.pages.homepage',compact('categories', 'allProducts'));
     }
-    public function categoryProducts($id){
+   
+    public function categoryWiseProducts($id){
         $categories=Category::all();
-        $categoryProdusts=Product::latest()->take(2)->get();
-        return view('frontend.layouts.pages.categoryProducts',compact('categoryProducts','categories'));
+        $categoryWiseProducts=Product::find($id);
+        return view('frontend.layouts.pages.categoryWiseProducts',compact('categories','categoryWiseProducts'));
     }
 }

@@ -27,7 +27,7 @@ class ProductController extends Controller
             'quantity'=>'required',
             'discount'=>'required',
             'discount_type'=>'required',
-            'image'=>'required|image|mimes:jpeg,png,svg,jpg,gif,webp|max:1024',
+            'image'=>'required|image|mimes:jpeg,png,svg,jpg,gif,webp',
             'description'=>'required|max:255',
         ]);
          if($request->hasFile('image')){

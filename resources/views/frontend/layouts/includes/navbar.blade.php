@@ -7,8 +7,9 @@
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                  
                         @foreach($categories as $category)
-                        <a href="{{route('categroy.products',$categoryProducts->proudcts->id)}}" class="nav-item nav-link">{{$category->name}}</a>
+                        <a href="#" class="nav-item nav-link">{{$category->name}}</a>
                         @endforeach
                         
                     </div>
