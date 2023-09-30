@@ -34,7 +34,7 @@
                     <span>Name: {{$product->name}}</span>
                     <p class="card-text">Descriptions: {{$product->description}}</p>
                     <!-- <p class="card-text">Discount:{{$product->discount}}%</p> -->
-                    <h1 style="float: right; font-size:16px;" class="badge btn-warning p-2">Price: {{$product->price}} TK.</h1>
+                    <h1 style="float: right; font-size:16px;" class="badge btn-warning p-2">Price: {{$product->price}} BDT.</h1>
                   
                 </div>
                 </div>

@@ -13,14 +13,16 @@
    }
 </style>
     
-   
-    <!-- category products -->
+    <!-- search product -->
+
+    <h1>Search Products for: {{$searchKey}}. found ({{$products->count()}})</h1>
+    @if($products->count() > 0)
     <div class="common-layout mb-5">
-        <h1 class="text-center"><strong>Category Wise Products</strong></h1>
+        <h1 class="text-center"><strong>Search by Product</strong></h1>
         <hr class="mt-5">
-        <h4>Product under a {{$category->name}}</h4>
         <div class="row mt-5">
-            @foreach ($category->products as $product )
+          
+            @foreach ($products as $product )
     
             <div class="col-md-3">
             <div class="card mb-5">
@@ -43,5 +45,10 @@
             @endforeach
         </div>
     </div>
+@else
+
+<p> Sorry ! Not product found </p>
+
+@endif
     
 @endsection

@@ -12,7 +12,8 @@ Route::get('/admin', function () {
    
     Route::get('/',[HomeController::class, 'homepage'])->name('homepage');
     Route::get('/allProducts',[HomeController::class, 'allproducts'])->name('home.allProducts');
-    Route::get('/category-wise-products/{id}',[HomeController::class, 'categoryWiseProducts'])->name('categoryWise.products');
+    Route::get('/category-wise-products/{id}',[HomeController::class, 'categoryWiseProducts'])->name('category.products');
+    Route::get('/search',[HomeController::class, 'search'])->name('search');
    
     
     /* categroy controller */
