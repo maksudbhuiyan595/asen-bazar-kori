@@ -33,8 +33,15 @@
                 <div class="card-body">
                     <span>Name: {{$product->name}}</span>
                     <p class="card-text">Descriptions: {{$product->description}}</p>
-                    <!-- <p class="card-text">Discount:{{$product->discount}}%</p> -->
-                    <h1 style="float: right; font-size:16px;" class="badge btn-warning p-2">Price: {{$product->price}} BDT.</h1>
+
+                    <div class="row">
+                        <div class="col">
+                           <button  class="btn btn-primary">Add To Cart</button>
+                        </div>
+                        <div class="col">
+                        <h1 style="float: right; font-size:16px;" class="badge btn-warning p-2">Price: {{$product->price}} BDT.</h1>
+                        </div>
+                    </div>
                   
                 </div>
                 </div>

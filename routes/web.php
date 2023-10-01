@@ -14,6 +14,8 @@ Route::get('/admin', function () {
     Route::get('/allProducts',[HomeController::class, 'allproducts'])->name('home.allProducts');
     Route::get('/category-wise-products/{id}',[HomeController::class, 'categoryWiseProducts'])->name('category.products');
     Route::get('/search',[HomeController::class, 'search'])->name('search');
+
+    Route::get('addToCart/{cart_id}',[HomeController::class, 'addToCart'])->name('add.to.cart');
    
     
     /* categroy controller */
