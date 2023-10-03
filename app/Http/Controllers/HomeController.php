@@ -36,5 +36,9 @@ class HomeController extends Controller
       return view('frontend.layouts.pages.searchProduct', compact('products','searchKey'));
 
     }
+    public function productDetails($id){
+        $products=Product::find($id);
+        return view('frontend.layouts.pages.productDetails',compact('products'));
+    }
    
 }

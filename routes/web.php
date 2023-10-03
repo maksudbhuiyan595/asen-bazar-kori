@@ -14,6 +14,7 @@ Route::get('/admin', function () {
     Route::get('/',[HomeController::class, 'homepage'])->name('homepage');
     Route::get('/allProducts',[HomeController::class, 'allproducts'])->name('home.allProducts');
     Route::get('/category-wise-products/{id}',[HomeController::class, 'categoryWiseProducts'])->name('category.products');
+    Route::get('product-details/{id}',[HomeController::class,'productDetails'])->name('product.details');
     Route::get('/search',[HomeController::class, 'search'])->name('search');
 
     Route::get('add-to-cart/{cart_id}',[CartController::class, 'addToCart'])->name('add.to.cart');
