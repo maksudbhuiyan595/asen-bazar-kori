@@ -36,9 +36,5 @@ class HomeController extends Controller
       return view('frontend.layouts.pages.searchProduct', compact('products','searchKey'));
 
     }
-    public function addToCart($id){
-        
-        $cart=session()->get('cart');
-        // dd($cart);
-    }
+   
 }

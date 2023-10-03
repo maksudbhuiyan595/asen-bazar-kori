@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -15,8 +16,15 @@ Route::get('/admin', function () {
     Route::get('/category-wise-products/{id}',[HomeController::class, 'categoryWiseProducts'])->name('category.products');
     Route::get('/search',[HomeController::class, 'search'])->name('search');
 
-    Route::get('addToCart/{cart_id}',[HomeController::class, 'addToCart'])->name('add.to.cart');
-   
+    Route::get('add-to-cart/{cart_id}',[CartController::class, 'addToCart'])->name('add.to.cart');
+    Route::get('cart-view',[CartController::class, 'cartView'])->name('cart.view');
+    Route::get('cart-item-remove/{id}',[CartController::class, 'cartItemRemove'])->name('cart.item.remove');
+    Route::get('cart-clear',[CartController::class, 'cartClear'])->name('cart.clear');
+
+    Route::get('checkout',[CartController::class, 'checkout'])->name('cart.checkout');
+    // Route::get('order-place',[CartController::class, 'orderPlace'])->name('order.place');
+    
+
     
     /* categroy controller */
     Route::get('category-list',[CategoryController::class, 'index'])->name('category.index');

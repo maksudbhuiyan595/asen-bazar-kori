@@ -10,7 +10,9 @@
         margin-right: auto;
         margin-left: auto;
         
-   }
+   } 
+   
+     
 </style>
     
     <!-- all products -->
@@ -23,12 +25,14 @@
     
             <div class="col-md-3">
             <div class="card mb-5">
-                
+                 
              <img 
                 style="width:250px;
                       height:200px;
                       padding:25px;"
                 src="{{url('/uploads/products',$product->image)}}" alt="image">
+                <a href="" class="bg-info text-white p-2">Product Details</a>
+
                 <hr class="mb-0">
                 <div class="card-body">
                     <span>Name: {{$product->name}}</span>
@@ -36,10 +40,10 @@
 
                     <div class="row">
                         <div class="col">
-                           <button  class="btn btn-primary">Add To Cart</button>
+                           <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-outline-danger">Add To Cart</a>
                         </div>
                         <div class="col">
-                        <h1 style="float: right; font-size:16px;" class="badge btn-warning p-2">Price: {{$product->price}} BDT.</h1>
+                        <h1 style="float: right; font-size:16px; padding: 11px;" class="badge btn-warning"> {{$product->price}} BDT</h1>
                         </div>
                     </div>
                   
